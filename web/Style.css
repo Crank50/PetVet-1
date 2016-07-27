@@ -1,0 +1,38 @@
+body{
+    background-image: url("http://www.nanuetanimalhospital.com/sites/site-1792/images/92b79fa1-7f00-0001-2fc4-16e19366ed47.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+h1{
+    color: green;
+    font-family: Beirut, sans-serif;
+    font-size-adjust: inherit;
+    border-style: ridge;
+    border-radius: 65px;
+    z-index:0;
+}
+table{
+    border-width: 10px;
+    border-color: white;
+}
+p{
+    color: green;
+    font-family: Beirut,sans-serif;
+}
+a:hover{
+    color: palevioletred;
+}
+a{
+    color: green;
+    font-family: "American Typewriter";
+}
+form{
+    padding-left: 950px;
+    margin-top: -150px;
+    position: absolute;
+    color: green;
+    z-index: 1;
+}

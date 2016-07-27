@@ -22,8 +22,27 @@ public class CustomerController extends HttpServlet {
         String jspName = uri.substring(uri.lastIndexOf('/')+1);
         System.out.println("JSP Name: "+jspName);
 
+        if(jspName.equalsIgnoreCase("viewAllPets")) {
 
-        RequestDispatcher view = request.getRequestDispatcher("/customers/"+jspName+".jsp");
+        } else if(jspName.equalsIgnoreCase("viewPet")) {
+
+        } else if(jspName.equalsIgnoreCase("addNewPet")) {
+
+        } else if(jspName.equalsIgnoreCase("editPet")) {
+
+        }  else if(jspName.equalsIgnoreCase("viewAllOwners")) {
+
+        } else if(jspName.equalsIgnoreCase("viewOwner")) {
+
+        } else if(jspName.equalsIgnoreCase("addNewOwner")) {
+
+        } else if(jspName.equalsIgnoreCase("editOwner")) {
+        }
+        // ... add the if-else logic for the owner views...
+
+
+
+        RequestDispatcher view = request.getRequestDispatcher("/customer/"+jspName+".jsp");
         view.forward(request, response);
 
     }

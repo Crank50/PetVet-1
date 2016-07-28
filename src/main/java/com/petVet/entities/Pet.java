@@ -2,7 +2,7 @@ package com.petVet.entities;
 
 
 public class Pet {
-    public static enum PetType { DOG, CAT, FISH, BIRD };
+    public static enum PetType { DOG, CAT, FISH, BIRD }
 
     private String petId;
     private String name;
@@ -29,26 +29,32 @@ public class Pet {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public PetType getPetType() {
+
         return petType;
     }
 
     public void setPetType(PetType petType) {
+
         this.petType = petType;
     }
 
     public String getOwnerId() {
+
         return ownerId;
     }
 
     public void setOwnerId(String ownerId) {
+
         this.ownerId = ownerId;
     }
 }

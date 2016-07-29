@@ -39,6 +39,11 @@ View All Owners
 </table>
 <br><br>
 <a href="/">HOME</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/mvc_cust/addNewOwner"> Add Owners</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/mvc_cust/editOwner?ownerid=<c:out value="${owner.ownerId}" />">Edit Owner</a>
+
 
 </body>
 </html>

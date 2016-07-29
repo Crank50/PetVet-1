@@ -30,9 +30,10 @@ public class CustomerController extends HttpServlet {
             request.setAttribute("pets", pets);
 
         } else if (jspName.equalsIgnoreCase("viewPet") || (jspName.equalsIgnoreCase("editPet"))) {
-            String petId = request.getParameter("petid");
+            String petId = request.getParameter("petId");
             Pet pet = DataCacheJson.getPet(petId);
             request.setAttribute("pet", pet);
+            request.setAttribute("petTypes", Pet.PetType.values());
 
         } else if (jspName.equalsIgnoreCase("addNewPet")) {
             request.setAttribute("petTypes", Pet.PetType.values());
@@ -60,13 +61,13 @@ public class CustomerController extends HttpServlet {
             DataCacheJson.setOwner(saveNewOwner);
             jspName = "viewAllOwners";
 
-        }else if (jspName.equalsIgnoreCase("saveNewPets")) {
-            Pet saveNewPets = new Pet();
-            saveNewPets.setName(request.getParameter("petName"));
-            saveNewPets.setPetType(Pet.PetType.valueOf(request.getParameter("petType")));
-            saveNewPets.setOwnerId(request.getParameter("ownerId"));
-            saveNewPets.setPetId(System.currentTimeMillis() + "-" + saveNewPets.getName().charAt(0));
-            DataCacheJson.setPet(saveNewPets);
+        }else if (jspName.equalsIgnoreCase("saveNewPet")) {
+            Pet saveNewPet = new Pet();
+            saveNewPet.setName(request.getParameter("name"));
+            saveNewPet.setPetType(Pet.PetType.valueOf(request.getParameter("petType")));
+            saveNewPet.setOwnerId(request.getParameter("ownerId"));
+            saveNewPet.setPetId(System.currentTimeMillis() + "-" + saveNewPet.getName().charAt(0));
+            DataCacheJson.setPet(saveNewPet);
             jspName = "viewAllPets";
 
         } else if (jspName.equalsIgnoreCase("updateOwner")) {
@@ -78,12 +79,13 @@ public class CustomerController extends HttpServlet {
             updateOwner.setAddress(request.getParameter("address"));
             DataCacheJson.setOwner(updateOwner);
             jspName = "viewAllOwners";
+
         } else if(jspName.equalsIgnoreCase("updatePet")) {
-            String petId = request.getParameter("petid");
+            String petId = request.getParameter("petId");
             Pet updatePet = DataCacheJson.getPet(petId);
-            updatePet.setOwnerId(request.getParameter("OwnerId"));
-            updatePet.setName(request.getParameter("Pet Name"));
-            updatePet.setPetType(Pet.PetType.valueOf(request.getParameter("PetType")));
+            updatePet.setOwnerId(request.getParameter("ownerId"));
+            updatePet.setName(request.getParameter("name"));
+            updatePet.setPetType(Pet.PetType.valueOf(request.getParameter("petType")));
             DataCacheJson.setPet(updatePet);
             jspName = "viewAllPets";
 

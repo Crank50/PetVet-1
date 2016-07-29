@@ -20,6 +20,7 @@ Add Owner
     Address: <input type="text" name="address" /><br>
     <input type="submit">
 </form>
+<a href="/">HOME</a>
 
 </body>
 </html>

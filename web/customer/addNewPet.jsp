@@ -15,15 +15,17 @@
 Add Pet
 <br><br>
 <form name="newOwnerForm" method="POST" action="/mvc_cust/saveNewPet">
+    Pet Id: <input type="text" name="petId" value="<c:out value="${Pet.petId}" />" readonly /><br>
     Name: <input type="text" name="name" /><br>
-    Pet Type:<select name = "Pet Type">
+    Pet Type:<select name = "petType">
                 <c:forEach var="ptype" items="${petTypes}">
                     <option value="<c:out value="${ptype}"/>"><c:out value="${ptype}"/></option>
-                </c:forEach>
-    </select><br>
+                </c:forEach> </select><br>
     Owner Id: <input type="text" name="ownerId" /><br>
+
     <input type="submit">
 </form>
+<a href="/">HOME</a>
 
 </body>
 </html>

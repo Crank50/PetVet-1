@@ -24,7 +24,7 @@ View All Pets
     <c:forEach items="${pets}" var="pet">
         <tr>
             <td>
-                <a href="/mvc_cust/viewPet?petid=${pet.petId}">
+                <a href="/mvc_cust/viewPet?petId=${pet.petId}">
                     <c:out value="${pet.petId}" />
                 </a>
             </td>
